@@ -71,6 +71,7 @@ class _AnimatedChartState extends State<AnimatedChart> {
                             ),
                           ),
                           Expanded(
+                            // 이부분 잘 안되었음
                             child: Container(
                               color: Colors.grey[200],
                               child: const Text(''),
