@@ -10,7 +10,7 @@ import 'package:inj/model/menu.dart';
 import 'package:inj/view/ListView.dart';
 import 'package:inj/view/horizontalBarChart.dart';
 import 'package:inj/view/pieChart.dart';
-import 'package:inj/view/test.dart';
+import 'package:inj/view/horizontalBarChart.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Home extends StatelessWidget {
@@ -18,18 +18,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomeBody();
+    return _HomeBody();
   }
 }
 
-class HomeBody extends StatefulWidget {
-  const HomeBody({super.key});
+class _HomeBody extends StatefulWidget {
+  const _HomeBody({super.key});
 
   @override
-  State<HomeBody> createState() => _HomeBodyState();
+  State<_HomeBody> createState() => _HomeBodyState();
 }
 
-class _HomeBodyState extends State<HomeBody> {
+class _HomeBodyState extends State<_HomeBody> {
   @override
   void initState() {
     // TODO: implement initState
@@ -37,19 +37,6 @@ class _HomeBodyState extends State<HomeBody> {
   }
 
   @override
-  List<double> points = [50, 90, 1003, 500, 150, 120, 200, 80];
-
-  List<String> labels = [
-    // 가로축에 적을 텍스트(레이블)
-    "2012",
-    "2013",
-    "2014",
-    "2015",
-    "2016",
-    "2017",
-    "2018",
-    "2019",
-  ];
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
@@ -98,19 +85,7 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                   SizedBox(
                       width: MediaQuery.of(context).size.width * 0.9,
-                      // height: MediaQuery.of(context).size.height * 0.5,
-                      child: AnimatedChart()
-                      // Column(
-                      //   children: const [AnimatedChart()],
-                      // ),
-                      ),
-                  // Container(
-                  //   child: Column(
-                  //     children: [
-                  //       horizontalBarChart(context),
-                  //     ],
-                  //   ),
-                  // ),
+                      child: AnimatedChart()),
                   Container(
                     child: Column(
                       children: [
@@ -129,16 +104,3 @@ class _HomeBodyState extends State<HomeBody> {
 } // END
 
 
-
-
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //         context,
-                  //         MaterialPageRoute(
-                  //           builder: (context) =>// Paint(),
-                  //         ),
-                  //       );
-                  //     },
-                  //     child: const Text('horizontalBar'),),
-                // ],
